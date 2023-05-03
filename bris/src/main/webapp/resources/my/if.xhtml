@@ -1,0 +1,19 @@
+<html lang="en"
+	  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:cc="jakarta.faces.composite">
+<cc:interface>
+    <cc:attribute name="condition" required="true"/>
+    <cc:facet name="then"/>
+    <cc:facet name="else" />
+</cc:interface>
+
+<cc:implementation>
+    <ui:fragment rendered="#{cc.attrs.condition}" >
+        <cc:renderFacet name="then" />
+    </ui:fragment>
+    <ui:fragment rendered="#{not cc.attrs.condition}" >
+        <cc:renderFacet name="else" />
+    </ui:fragment>
+</cc:implementation>
+</html>
