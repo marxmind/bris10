@@ -1,0 +1,104 @@
+<html 
+	  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:faces="jakarta.faces"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:cc="jakarta.faces.composite"
+    >
+ 
+    <ui:composition>
+    	
+    	
+    	
+    	<div class="sidebar bg-intel">
+    	
+          <!-- <input type="text" placeholder="Search..." id="mySearch"/> -->
+          <br/>	
+   		<div id="myMenu" class="sidebarMenu">
+   		  
+           <p:commandLink style="color: white" styleClass="nav-link" actionListener="#{mainBean.reloadinit}" action="#{menuBean.home}" disabled="#{featuresBean.profile}" ajax="false" immediate="false" onclick="showLoading()">
+            	<i class="fas fa-fw fa-folder"></i>
+            	<span>#{menuBean.labels[0]}</span>
+            </p:commandLink>
+           <p:commandLink style="color: white" styleClass="nav-link" actionListener="#{citizenWizardBean.reloadinit}" action="#{menuBean.adminTaxpayer}" disabled="#{featuresBean.registration}" ajax="false" immediate="false" onclick="showLoading()">
+            	<i class="fas fa-fw fa-folder"></i>
+            	<span>#{menuBean.labels[1]}</span>
+            </p:commandLink>
+        	<p:commandLink style="color: white" styleClass="nav-link" actionListener="#{documentsBean.reloadinit}" action="#{menuBean.clearance}" disabled="#{featuresBean.clearance}" ajax="false" immediate="false" onclick="showLoading()">
+        		<i class="fas fa-fw fa-folder"></i>
+            	<span>#{menuBean.labels[2]}</span>
+        	</p:commandLink>
+        	<p:commandLink style="color: white" styleClass="nav-link" actionListener="#{cardBean.reloadinit}" action="#{menuBean.cards}" disabled="#{featuresBean.idGeneration}" ajax="false" immediate="false" onclick="showLoading()">
+        		<i class="fas fa-fw fa-folder"></i>
+            	<span>#{menuBean.labels[3]}</span>
+        	</p:commandLink>
+        	
+        	 <p:commandLink style="color: white" styleClass="nav-link" actionListener="#{casesBean.reloadinit}" action="#{menuBean.blotters}" disabled="#{featuresBean.blotters}" ajax="false" immediate="false" onclick="showLoading()">
+        	 	<i class="fas fa-fw fa-folder"></i>
+            	<span>#{menuBean.labels[5]}</span>
+        	 </p:commandLink>
+        	<p:commandLink style="color: white" styleClass="nav-link" action="#{menuBean.adminBusiness}" disabled="#{featuresBean.business}" ajax="false" immediate="false" onclick="showLoading()">
+        		<i class="fas fa-fw fa-folder"></i>
+            	<span>Business List</span>
+        	</p:commandLink>
+        	
+        	<p:commandLink style="color: white" styleClass="nav-link" action="#{menuBean.moemeter}" disabled="#{featuresBean.moemeter}" ajax="false" immediate="false" onclick="showLoading()">
+        		<i class="fas fa-fw fa-folder"></i>
+            	<span>IRA Setup</span>
+        	</p:commandLink>
+        	<p:commandLink style="color: white" styleClass="nav-link" action="#{menuBean.adminEmployees}" disabled="#{featuresBean.employee}" ajax="false" immediate="false" onclick="showLoading()">
+        		<i class="fas fa-fw fa-folder"></i>
+            	<span>#{menuBean.labels[11]}</span>
+        	</p:commandLink>
+          
+          <p:commandLink style="color: white" styleClass="nav-link" action="#{menuBean.cedula}" ajax="false" disabled="#{featuresBean.cedula}" immediate="false" onclick="showLoading()">
+            <i class="fas fa-fw fa-table"></i>
+            <span>#{menuBean.labels[16]}</span>
+          </p:commandLink>
+          
+          <p:commandLink style="color: white" styleClass="nav-link" action="#{menuBean.orlisting}" ajax="false" disabled="#{featuresBean.orlisting}" immediate="false" onclick="showLoading()">
+            <i class="fas fa-fw fa-table"></i>
+            <span>#{menuBean.labels[17]}</span>
+          </p:commandLink>
+          		
+          		<a href="#formsSubmenuCheke" data-toggle="collapse" aria-expanded="false" class="nav-link" style="color: black">
+          		<i class="fas fa-fw fa-table"></i><span>Cheques</span></a>
+                    <ul class="collapse list-unstyled" id="formsSubmenuCheke">
+                        <li>
+					        <p:commandLink style="color: white" styleClass="nav-link" action="#{menuBean.cheque}" disabled="#{featuresBean.cheque}" ajax="false" immediate="false" onclick="showLoading()">
+				        		<i class="fas fa-fw fa-folder"></i>
+				            	<span>Check Writing</span>
+				        	</p:commandLink>
+                        </li>
+                        <li>
+                        	<p:commandLink style="color: white" styleClass="nav-link" action="transmittal" disabled="#{featuresBean.cheque}" ajax="false" immediate="false" onclick="showLoading()">
+					            <i class="fas fa-fw fa-table"></i>
+					            <span>Transmittal</span>
+					        </p:commandLink>
+                        </li>
+                        <li>
+                        	<p:commandLink style="color: white" styleClass="nav-link" action="bankreport" disabled="#{featuresBean.cheque}" ajax="false" immediate="false" onclick="showLoading()">
+					            <i class="fas fa-fw fa-table"></i>
+					            <span>PBC</span>
+					        </p:commandLink>
+                        </li>
+                    </ul>
+          		
+          		
+      </div>
+    </div>
+    	<script>
+    		$(document).ready(function(){
+    			$('#mySearch').on('keyup',function(){
+    				var value = $(this).val().toLowerCase();
+    				$("#myMenu a").filter(function(){
+    					$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    				});
+    			});
+    		});
+    		
+    	</script>
+    </ui:composition>
+</html>

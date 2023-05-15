@@ -1,0 +1,17 @@
+<html 
+	  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:faces="jakarta.faces"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:cc="jakarta.faces.composite"
+    >
+ 
+    <ui:composition>
+    
+    <p:commandButton id="showNoteId" value="#{menuBean.total}" action="email.xhtml" icon="pi pi-envelope" style="#{notiBean.styleButton}#{skin.emailButton}" title="This is where your email or notification messages save" />
+
+</ui:composition>
+
+</html>

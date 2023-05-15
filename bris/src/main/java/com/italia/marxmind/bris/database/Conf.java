@@ -4,6 +4,9 @@ import com.italia.marxmind.bris.enm.Bris;
 import com.italia.marxmind.bris.reader.ReadConfig;
 import com.italia.marxmind.bris.security.SecureChar;
 
+import lombok.Builder;
+import lombok.Data;
+
 /**
  * 
  * @author Mark Italia
@@ -11,6 +14,7 @@ import com.italia.marxmind.bris.security.SecureChar;
  * @version 1.0
  *
  */
+@Data
 public class Conf {
 	
 	private static volatile Conf conf;
@@ -75,57 +79,5 @@ public class Conf {
 			System.out.println("Configuration file was not set. To set configuration file call the class InitDB.getInstance.setPathFileLocation('your file configuration')");
 		}
 	}
-	
-	
-	public String getDatabaseName() {
-		return databaseName;
-	}
-	public void setDatabaseName(String databaseName) {
-		this.databaseName = databaseName;
-	}
-	public String getDatabasePort() {
-		return databasePort;
-	}
-	public void setDatabasePort(String databasePort) {
-		this.databasePort = databasePort;
-	}
-	public String getDatabaseUrl() {
-		return databaseUrl;
-	}
-	public void setDatabaseUrl(String databaseUrl) {
-		this.databaseUrl = databaseUrl;
-	}
-	public String getDatabaseDriver() {
-		return databaseDriver;
-	}
-	public void setDatabaseDriver(String databaseDriver) {
-		this.databaseDriver = databaseDriver;
-	}
-	public String getDatabaseSSL() {
-		return databaseSSL;
-	}
-	public void setDatabaseSSL(String databaseSSL) {
-		this.databaseSSL = databaseSSL;
-	}
-	public String getDatabaseTimeZone() {
-		return databaseTimeZone;
-	}
-	public void setDatabaseTimeZone(String databaseTimeZone) {
-		this.databaseTimeZone = databaseTimeZone;
-	}
-	public String getDatabaseUserName() {
-		return databaseUserName;
-	}
-	public void setDatabaseUserName(String databaseUserName) {
-		this.databaseUserName = databaseUserName;
-	}
-	public String getDatabasePassword() {
-		return databasePassword;
-	}
-	public void setDatabasePassword(String databasePassword) {
-		this.databasePassword = databasePassword;
-	}
-	
-	
 	
 }

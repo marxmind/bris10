@@ -33,25 +33,7 @@ public class ConnectDB {
 			String url = db_url + ":" + port + "/" +dbName+ "?"+timeZone+"&" + ssl;
 			String u_name = conf.getDatabaseUserName();
 			String pword = conf.getDatabasePassword();
-			/*
-			String driver = ReadConfig.value(Bris.DB_DRIVER);
-			Class.forName(driver);
-			String db_url = ReadConfig.value(Bris.DB_URL);
-			String port = ReadConfig.value(Bris.DB_PORT);
-			       port = SecureChar.decode(port);
-			String url = db_url + ":" + port + "/" +ReadConfig.value(Bris.DB_NAME)+ "?serverTimezone=UTC&" + ReadConfig.value(Bris.DB_SSL);
-			String u_name = ReadConfig.value(Bris.USER_NAME);
-				   u_name = SecureChar.decode(u_name);
-				   u_name = u_name.replaceAll("mark", "");
-				   u_name = u_name.replaceAll("rivera", "");
-				   u_name = u_name.replaceAll("italia", "");
-			String pword = ReadConfig.value(Bris.USER_PASS);
-				   pword =  SecureChar.decode(pword);
-				   pword = pword.replaceAll("mark", "");
-				   pword = pword.replaceAll("rivera", "");
-				   pword = pword.replaceAll("italia", "");
-			*/	   
-				   
+			
 			conn = DriverManager.getConnection(url, u_name, pword);
 			return conn;
 		}catch(Exception e){

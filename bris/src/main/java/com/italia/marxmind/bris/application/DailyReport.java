@@ -130,104 +130,6 @@ public class DailyReport {
 		
 	}
 	
-	/*public static void main(String[] args) {
-		
-		String log = "";
-		if(!isUserFileExist()) {
-			log += "File User is not existing....\n";
-			log +="Start saving new report user....\n";
-			saveUsers();
-			log +="End saving new report user....\n";
-		}
-		
-		if(isDateFileExist()) {
-			
-			if(readDate().equalsIgnoreCase(DateUtils.getCurrentDateYYYYMMDD())) {
-				System.out.println("No report to be generate....");
-			}else {
-			
-				log +="Start fetching data for report generation....\n";
-				collectReport();
-				log +="Done fetching data for report generation....\n";
-				log +="Start saving new report date generation....\n";
-				saveDate();
-				log +="End saving new report date generation....\n";
-				saveLog(log);
-				
-				//run the barangay information method
-				//if date is not yet created for above information;
-				log +="Start collectiong info for graph....\n";
-				collecInfo();
-				log +="End collectiong info for graph....\n";
-			}
-		}else {
-			log +="File date is not existing....\n";
-			log +="Start saving new report date generation....\n";
-			saveDate();
-			log +="End saving new report date generation....\n";
-			
-			if(readDate().equalsIgnoreCase(DateUtils.getCurrentDateYYYYMMDD())) {
-				System.out.println("No report to be generate....");;
-			}else {
-			
-				log +="Start fetching data for report generation....\n";
-				collectReport();
-				log +="Done fetching data for report generation....\n";
-				log +="Start saving new report date generation....\n";
-				saveDate();
-				log +="End saving new report date generation....\n";
-				saveLog(log);
-				
-				//run the barangay information method
-				//if date is not yet created for above information;
-				//run the barangay information method
-				//if date is not yet created for above information;
-				log +="Start collectiong info for graph....\n";
-				collecInfo();
-				log +="End collectiong info for graph....\n";
-			}
-			
-			
-			
-		}
-		
-		if(!isUserSummonFileExist()) {
-			log += "File User is not existing....\n";
-			log +="Start saving new summon user....\n";
-			saveUsersSummon();
-			log +="End saving new summon user....\n";
-		}
-		
-		if(isSummonFileExist()) {
-			if(readSummonDate().equalsIgnoreCase(DateUtils.getCurrentDateYYYYMMDD())) {
-				System.out.println("No report to be generate....");
-			}else {
-				
-				log +="Start fetching data for summon generation....\n";
-				collectSummonReport();
-				log +="Done fetching data for summon generation....\n";
-				
-				log +="Start saving new date report summon....\n";
-				saveSummonDate();
-				log +="End saving new date report summon....\n";
-			}
-		}else {
-			
-			log +="Start saving fresh date report summon....\n";
-			saveSummonDate();
-			log +="End saving fresh date report summon....\n";
-			
-			log +="Start fetching data for summon generation....\n";
-			collectSummonReport();
-			log +="Done fetching data for summon generation....\n";
-			
-			log +="Start saving new date report summon....\n";
-			saveSummonDate();
-			log +="End saving new date report summon....\n";
-		}
-		
-	}*/
-	
 	public static void saveLog(String log) {
 		
 		String emailPath = Bris.PRIMARY_DRIVE.getName() + 
@@ -277,7 +179,7 @@ public class DailyReport {
 		
 		File file = new File(pathFile);
 		if(file.exists()) {
-			System.out.println("File exist... " + pathFile);
+			//System.out.println("File exist... " + pathFile);
 			return true;
 		}
 		
@@ -357,7 +259,7 @@ public class DailyReport {
 		
 		File file = new File(pathFile);
 		if(file.exists()) {
-			System.out.println("File exist... " + pathFile);
+			//System.out.println("File exist... " + pathFile);
 			return true;
 		}
 		
@@ -454,7 +356,7 @@ public class DailyReport {
 		String htmlDoc = "<p><h2>Documents</h2></p>";
 		
 		htmlDoc += "<table>";
-		System.out.println("Documents: " + rpt.getRpts().size());
+		//System.out.println("Documents: " + rpt.getRpts().size());
 		boolean docOk = rpt.getRpts().size()>=5? true : false;
 		for(Reports r : rpt.getRpts()) {
 			htmlDoc += "<tr>";
@@ -479,7 +381,7 @@ public class DailyReport {
 		
 		String htmlId  = "<p><h2>Identification No</h2></p>"; 
 		htmlId += "<table>";
-		System.out.println("Ids: " + rpt.getRpts().size());
+		//System.out.println("Ids: " + rpt.getRpts().size());
 		boolean idOk = rpt.getRpts().size()>=5? true : false;
 		for(Reports r : rpt.getRpts()) {
 			htmlId += "<tr>";
@@ -501,7 +403,7 @@ public class DailyReport {
 		rpt.loadReport();
 		String htmlCase = "<p><h2>Log Cases</h2></p>"; 
 		htmlCase += "<table>";
-		System.out.println("Cases: " + rpt.getRpts().size());
+		//System.out.println("Cases: " + rpt.getRpts().size());
 		boolean caseOk = rpt.getRpts().size()>=5? true : false;
 		for(Reports r : rpt.getRpts()) {
 			htmlCase += "<tr>";
@@ -571,8 +473,6 @@ public class DailyReport {
 			
 			cnt++;
 		}
-		
-		//System.out.println("send to " + toMailUser);
 		
 		isCheckNote=true;
 		if(isCheckNote && !toMailUser.isEmpty()) {
@@ -661,7 +561,7 @@ public class DailyReport {
 		
 		File file = new File(pathFile);
 		if(file.exists()) {
-			System.out.println("File exist... " + pathFile);
+			//System.out.println("File exist... " + pathFile);
 			return true;
 		}
 		
@@ -742,7 +642,7 @@ public class DailyReport {
 		
 		File file = new File(pathFile);
 		if(file.exists()) {
-			System.out.println("File exist... " + pathFile);
+			//System.out.println("File exist... " + pathFile);
 			return true;
 		}
 		
@@ -925,7 +825,7 @@ public class DailyReport {
 			cnt++;
 		}
 		
-		System.out.println("send to " + toMailUser);
+		//System.out.println("send to " + toMailUser);
 		
 		isCheckNote=true;
 		if(isCheckNote && !toMailUser.isEmpty()) {
