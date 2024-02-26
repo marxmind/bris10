@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en"
+	  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:faces="jakarta.faces"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:pt="jakarta.faces.passthrough"
+      xmlns:cc="jakarta.faces.composite"
+      xmlns:c="jakarta.tags.core"
+    xmlns:fn="jakarta.tags.functions"
+    xmlns:my="jakarta.faces.component"
+    >    
+<h:head>
+	<link rel="shortcut icon" type="image/x-icon" href="#{resource['favicon.ico']}" />
+	<title>#{versionBean.copyright.appname} Employee</title>
+	
+	<f:facet name="middle">
+			<h:outputStylesheet name="sb-admin/bootstrap/css/bootstrap.min.css"/>
+            <h:outputStylesheet name="sb-admin/font-awesome/css/all.min.css" />
+            <h:outputStylesheet name="sb-admin/css/sb-admin.min.css"/>
+            <h:outputStylesheet name="sb-admin/css/bg-sidebar.min.css"/>
+            <h:outputStylesheet name="css/font-awesome.min.css" />
+            <h:outputStylesheet name="css/utils.css"/>
+     </f:facet>
+     <f:facet name="last">       
+            <h:outputScript name="jquery/jquery.min.js" target="head"/>
+            <h:outputScript name="bootstrap/js/bootstrap.min.js"/>
+            <h:outputScript name="sb-admin/bootstrap/js/bootstrap.bundle.min.js"/>
+            <h:outputScript name="sb-admin/jquery-easing/jquery.easing.min.js"/>
+            <h:outputScript name="sb-admin/js/sb-admin.min.js"/>
+            
+            
+    </f:facet>
+        
+<style>
+<!-- 
+
+.ui-growl{
+	top: 100px;
+	right: 500px; important!;
+	z-index: 1500; important!;
+}
+
+.ui-container{
+	top: 100px;
+	right: 500px; important!;
+}
+    
+    -->
+ </style>
+ 
+</h:head>
+
+<h:body id="page-top">
+<h:form prependId="false" id="formId">
+
+<p:growl id="msg" life="8000" showDetail="true" />
+ <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+       	<p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+       	<p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+ </p:confirmDialog>	
+ 
+ 
+ <nav class="navbar navbar-expand navbar-intel bg-intel static-top">
+
+      <a class="navbar-brand mr-1" href="main.xhtml">#{versionBean.copyright.appname}</a>
+
+      <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+        	  
+     </div>
+
+      
+      <ui:include src="menutop.xhtml" />
+		
+	 	
+    </nav>
+    
+    
+      
+    <div id="wrapper">
+		 
+      <ui:include src="sidebarmenu.xhtml" />
+
+      <div id="content-wrapper">        
+		  <div class="container-fluid">
+		      
+		   		<p:toolbar id="tbOD">
+		    		<f:facet name="left">
+				        <p:selectOneMenu value="#{officerBean.monthId}" style="width: 15em">
+                			<f:selectItems value="#{officerBean.months}"/>
+                			<p:ajax event="itemSelect" listener="#{officerBean.itemSelect}" update="odData" />
+            			</p:selectOneMenu>
+            			<p:selectOneMenu value="#{officerBean.yearId}" style="width: 15em">
+                			<f:selectItems value="#{officerBean.years}"/>
+                			<p:ajax event="itemSelect" listener="#{officerBean.itemSelect}" update="odData" />
+            			</p:selectOneMenu>
+            			<p:commandButton icon="pi pi-sync" actionListener="#{officerBean.loadOD}" update="odData"/>
+		    		</f:facet>
+		    		<f:facet name="right"/>
+				</p:toolbar>
+    			
+    			<p:dataGrid id="odData" value="#{officerBean.ods}" var="ood" stickyHeader="false" layout="grid"
+						 columns="5" emptyMessage="BRIS SOFTWARE YOUR PORTAL FOR BARANAGAY INFORMATION">
+                         
+                         <p:column>
+                         	<p:commandButton id="selectedId" value="#{ood.day} #{ood.officerName}" style="#{ood.buttonStyle}" update="searchOff" actionListener="#{officerBean.selectedDate(ood)}" oncomplete="PF('dlgOdOff').show()"/>
+                         </p:column>
+    			</p:dataGrid>
+		   
+		            
+		</div><!-- Fluid end -->
+	</div><!-- End content wrapper -->
+	
+	<!-- Sticky Footer -->
+        <footer class="sticky-footer citizenBox">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>#{versionBean.copyright.copyrightname}</span>
+            </div>
+          </div>
+        </footer>
+	
+	</div><!-- wrapper -->	   
+	
+	<!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+ 	
+ 	<p:dialog header="Officer List" responsive="true" widgetVar="dlgOdOff" fitViewport="true">
+    	
+    	<p:toolbar id="tbODOff">
+		    		<f:facet name="left">
+				        <p:inputText id="searchOff" value="#{officerBean.searchOfficer}" autocomplete="off">
+				        	<p:ajax event="keyup" listener="#{officerBean.loadOfficer}" update="odDataOff" />
+				        </p:inputText>
+		    		</f:facet>
+		    		<f:facet name="right"/>
+				</p:toolbar>
+    			
+    			<p:dataGrid id="odDataOff" value="#{officerBean.employees}" var="ee" stickyHeader="false" layout="grid"
+						 columns="5" emptyMessage="BRIS SOFTWARE YOUR PORTAL FOR BARANAGAY INFORMATION">
+                         
+                         <p:column>
+                         	<p:commandButton value="#{ee.firstName} #{ee.lastName}" actionListener="#{officerBean.sectedOfficer(ee)}" oncomplete="PF('dlgOdOff').hide()" update="odData"/>
+                         </p:column>
+    			</p:dataGrid>
+    </p:dialog>
+ 	
+ <ui:include src="loader.xhtml" />
+</h:form>
+</h:body>
+</html>   

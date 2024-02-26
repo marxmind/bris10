@@ -62,6 +62,11 @@
             <i class="fas fa-fw fa-table"></i>
             <span>#{menuBean.labels[17]}</span>
           </p:commandLink>
+          
+          <p:commandLink style="color: white" styleClass="nav-link" actionListener="#{officerBean.loadOD}" action="officerday.xhtml" ajax="false" immediate="false" onclick="showLoading()">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Assign Officer of the Day</span>
+          </p:commandLink>
           		
           		<a href="#formsSubmenuCheke" data-toggle="collapse" aria-expanded="false" class="nav-link" style="color: black">
           		<i class="fas fa-fw fa-table"></i><span>Cheques</span></a>

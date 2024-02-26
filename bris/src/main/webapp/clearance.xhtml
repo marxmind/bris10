@@ -230,28 +230,29 @@
 						<p:commandButton style="#{skin.button}" disabled="#{documentsBean.borndDtlsFld}" update="birthFld" icon="pi pi-search" onclick="PF('birthDlg').show()"  />
 						</p:outputLabel>
 						
-						<p:outputLabel  value="Validity(Months)" style="#{skin.label}"/>
+						<p:outputLabel  value="Validity(Months)"/>
 						<p:inputNumber value="#{documentsBean.documentValidity}" inputStyle="width: 15em" disabled="#{documentsBean.documentValidFld}"/>
 						
-						<p:outputLabel  value="Amount: " style="#{skin.label}"/>
+						<p:outputLabel  value="Amount:"/>
 						<p:inputNumber id="idAmount"  value="#{documentsBean.amountPaid}" disabled="#{documentsBean.payable}" inputStyle="width: 15em"/>
 						
-						<p:outputLabel  value="#{documentsBean.supportingDtlsLabel}" style="#{skin.label}">
-		        		
-		        		<p:commandButton style="#{skin.button}" disabled="#{documentsBean.largeCattleFld}" update=":formId:cattleFld" icon="pi pi-search" onclick="PF('cattleDlg').show()"  />
-		        		<p:commandButton style="#{skin.button}" disabled="#{documentsBean.motorcycleFld}" update=":formId:motorFld" icon="pi pi-search" onclick="PF('motorDlg').show()"  />
-		        		<p:commandButton style="#{skin.button}" disabled="#{documentsBean.landFld}" update=":formId:landFld" icon="pi pi-search" onclick="PF('landDlg').show()"  />
-		        		<p:commandButton style="#{skin.button}" disabled="#{documentsBean.treeFld}" update=":formId:treeFld" icon="pi pi-search" onclick="PF('treeDlg').show()"  />
+						<p:outputLabel  value="#{documentsBean.supportingDtlsLabel}">
+		        		<div class="ui-inputgroup">
+		        		<p:commandButton disabled="#{documentsBean.largeCattleFld}" update=":formId:cattleFld" icon="pi pi-search" onclick="PF('cattleDlg').show()"  />
+		        		<p:commandButton disabled="#{documentsBean.motorcycleFld}" update=":formId:motorFld" icon="pi pi-search" onclick="PF('motorDlg').show()"  />
+		        		<p:commandButton disabled="#{documentsBean.landFld}" update=":formId:landFld" icon="pi pi-search" onclick="PF('landDlg').show()"  />
+		        		<p:commandButton disabled="#{documentsBean.treeFld}" update=":formId:treeFld" icon="pi pi-search" onclick="PF('treeDlg').show()"  />
+		        		</div>
 		        		</p:outputLabel>
 						
 						<h:panelGroup layout="block" rendered="#{documentsBean.largeCattleFld}">
 						<h:inputTextarea  disabled="#{documentsBean.supportDtlsFld}" value="#{documentsBean.supportingDetails}" placeholder="#{documentsBean.supportingDtlsPlaceHolder}" style="width: 15em"/>
 						</h:panelGroup>
 						<h:panelGroup layout="block" rendered="#{!documentsBean.largeCattleFld}">
-						<p:outputLabel value="#{documentsBean.cattleInformation}" style="#{skin.label}"/>
+						<p:outputLabel value="#{documentsBean.cattleInformation}"/>
 						</h:panelGroup>
 						
-						<p:outputLabel for="sign1" value="Signed By:" style="#{skin.label}"/>
+						<p:outputLabel for="sign1" value="Signed By:"/>
 		            	<p:autoComplete id="sign1" value="#{documentsBean.employee}" placeholder="Signer name"  inputStyle="width: 15em"
 								completeMethod="#{documentsBean.loadEmployeeSigner}" minQueryLength="4" queryDelay="300" maxResults="5" 
 								 dropdown="true" var="em" itemLabel="#{em.fullName}" itemValue="#{em}" converter="brisConverter">

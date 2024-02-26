@@ -99,7 +99,9 @@ public class LoginBean implements Serializable{
 				
 			  System.out.println("Running report");
 			  System.out.println("=======================================BEFORE TIME " + DateUtils.getCurrentDateYYYYMMDDTIME());
-			  DailyReport.runReport(); 
+			  //disabled temportary
+			  //affected on main page  of graph
+			  //DailyReport.runReport(); 
 			  System.out.println("=======================================AFTER TIME " + DateUtils.getCurrentDateYYYYMMDDTIME());
 
 				

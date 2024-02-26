@@ -121,7 +121,7 @@ public class ReportGeneratorBean implements Serializable {
 	
 	public void loadReport(){
 		
-		rpts = Collections.synchronizedList(new ArrayList<Reports>());
+		rpts = new ArrayList<Reports>();
 		
 		//setIncludeClearance(false);
 		//setDetailedClerance(true);

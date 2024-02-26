@@ -104,8 +104,8 @@ public class MenuBean implements Serializable{
 			setTab(false);
 			setBoot(true);
 		}
-		runReport();
-		loadCountEmailNote();
+		//runReport();
+		//loadCountEmailNote();
 
 		HttpSession session = SessionBean.getSession();
 		String ui = session.getAttribute("ui").toString();
@@ -114,6 +114,7 @@ public class MenuBean implements Serializable{
 		
 	}
 	
+	@Deprecated
 	private void runReport() {
 		try {
 		System.out.println("Run report....");
@@ -149,7 +150,7 @@ public class MenuBean implements Serializable{
 		
 		}catch(Exception e) {e.printStackTrace();}
 	}
-	
+	@Deprecated
 	public void loadCountEmailNote() {
 		String sql = " AND msgtype=1 AND isopen=0 AND isdeleted=0 AND personcpy=?";
 		String[] params = new String[1];

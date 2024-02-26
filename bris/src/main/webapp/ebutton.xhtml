@@ -10,8 +10,8 @@
  
     <ui:composition>
     
-    <p:commandButton id="showNoteId" value="#{menuBean.total}" action="email.xhtml" icon="pi pi-envelope" style="#{notiBean.styleButton}#{skin.emailButton}" title="This is where your email or notification messages save" />
-
+   
+	<p:commandButton value="#{menuBean.total}" title="Email" icon="pi pi-envelope" id="mailId" action="email" immediate="false" ajax="false" style="-moz-border-radius: 100px;-webkit-border-radius: 100px;border-radius: 100px;height: 30px;width: 30px;bottom: 0px;right: 7px;float:right; position: fixed;z-index: 1500;font-size: 70% ! important;font-weight: bold ! important;  text-transform: none ! important; "/>
 </ui:composition>
 
 </html>

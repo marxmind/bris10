@@ -98,7 +98,7 @@ public class BarangayConf implements Serializable{
 	}
 	
     public static List<BarangayConf> readBusinessXML(){
-    	List<BarangayConf> bars = Collections.synchronizedList(new ArrayList<BarangayConf>());
+    	List<BarangayConf> bars = new ArrayList<BarangayConf>();
     	
     	try {
     	Properties prop = new Properties();

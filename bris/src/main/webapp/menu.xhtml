@@ -9,176 +9,9 @@
     >
  
     <ui:composition>
-		<p:tooltip position="top"/>
-		<h:panelGroup layout="block" rendered="#{menuBean.stack}">
-		
-		<p:stack id="menu1" icon="/resources/gif/briefcase.png" closeSpeed="300" openSpeed="300"  expanded="false" widgetVar="men1" >
-			
-				<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[0]}"  icon="/resources/gif/home.png" action="#{menuBean.home}" disabled="#{featuresBean.profile}"/>
-		    	<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[1]}" icon="/resources/gif/customer.png" action="#{menuBean.adminTaxpayer}" disabled="#{featuresBean.registration}"/>
-		    	<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[2]}" icon="/resources/gif/clearance.png" action="#{menuBean.clearance}" disabled="#{featuresBean.clearance}"/>
-		    	<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[3]}" icon="/resources/gif/idcard.png" action="#{menuBean.cards}" disabled="#{featuresBean.idGeneration}"/>
-		    	
-		    	
-		</p:stack>
-		
-		<p:stack id="menu2" icon="/resources/gif/briefcase.png" closeSpeed="300" openSpeed="300"  expanded="false" widgetVar="men2">
-		
-				<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[4]}" icon="/resources/gif/cheque.png" action="#{menuBean.cheque}" disabled="#{featuresBean.cheque}" />
-		    	<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[5]}" icon="/resources/gif/blotter.png" action="#{menuBean.blotters}" disabled="#{featuresBean.blotters}"/>
-				<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[6]}" icon="/resources/gif/documents-1.png" action="#{menuBean.adminBusiness}" disabled="#{featuresBean.business}"/>
-		    	<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[7]}" icon="/resources/gif/bris.png" action="#{menuBean.assistant}" disabled="#{featuresBean.assistant}"/>
-		    	
-		    	
-		</p:stack>
-		
-		<p:stack id="menu3" icon="/resources/gif/briefcase.png" closeSpeed="300" openSpeed="300"  expanded="false" widgetVar="men3">
-		
-				<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[8]}" icon="/resources/gif/graph.png" action="#{menuBean.graph}" disabled="#{featuresBean.graph}"/>
-		    	<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[9]}" icon="/resources/gif/organization.png" action="#{menuBean.organization}" disabled="#{featuresBean.organization}"/>
-				<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[10]}" icon="/resources/gif/meter2.png" action="#{menuBean.moemeter}" disabled="#{featuresBean.moemeter}"/>
-		    	<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[11]}" icon="/resources/gif/employee.png" action="#{menuBean.adminEmployees}" disabled="#{featuresBean.employee}"/>
-		    	
-		
-		</p:stack>
-		
-		<p:stack id="menu4" icon="/resources/gif/briefcase.png" closeSpeed="300" openSpeed="300"  expanded="false" widgetVar="men4" >
-		
-				
-		    	<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[12]}" icon="/resources/gif/user.png" action="#{menuBean.adminUser}" disabled="#{featuresBean.userRegistration}"/>
-		    	<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[13]}" icon="/resources/gif/admin.png" action="#{menuBean.bris}" disabled="#{featuresBean.brisFeatures}"/>	
-		    	<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[15]}" icon="/resources/gif/explorer.png" action="#{menuBean.explorer}" disabled="#{featuresBean.explorer}"/>
-		    	<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[14]}" icon="/resources/gif/user-1.png" action="#{loginBean.logout}"/>
-		
-		</p:stack>
-		
-		</h:panelGroup>
-		
-		<h:panelGroup layout="block" rendered="#{menuBean.dock}">
-			<p:dock position="bottom">
-				<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[0]}" icon="/resources/gif/home.png" action="#{menuBean.home}" disabled="#{featuresBean.profile}"/>
-				<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[1]}" icon="/resources/gif/customer.png" action="#{menuBean.adminTaxpayer}" disabled="#{featuresBean.registration}"/>
-				<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[2]}" icon="/resources/gif/clearance.png" action="#{menuBean.clearance}" disabled="#{featuresBean.clearance}"/>
-				<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[3]}" icon="/resources/gif/idcard.png" action="#{menuBean.cards}" disabled="#{featuresBean.idGeneration}"/>
-				<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[4]}" icon="/resources/gif/cheque.png" action="#{menuBean.cheque}" disabled="#{featuresBean.cheque}"/>
-				<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[5]}" icon="/resources/gif/blotter.png" action="#{menuBean.blotters}" disabled="#{featuresBean.blotters}"/>
-				<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[6]}" icon="/resources/gif/documents-1.png" action="#{menuBean.adminBusiness}" disabled="#{featuresBean.business}"/>
-				<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[7]}" icon="/resources/gif/bris.png" action="#{menuBean.assistant}" disabled="#{featuresBean.assistant}"/>
-	    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[8]}" icon="/resources/gif/graph.png" action="#{menuBean.graph}" disabled="#{featuresBean.graph}"/>
-	    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[9]}" icon="/resources/gif/organization.png" action="#{menuBean.organization}" disabled="#{featuresBean.organization}"/>
-	    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[10]}" icon="/resources/gif/meter2.png" action="#{menuBean.moemeter}" disabled="#{featuresBean.moemeter}"/>
-	    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[11]}" icon="/resources/gif/employee.png" action="#{menuBean.adminEmployees}" disabled="#{featuresBean.employee}"/>
-	    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[12]}" icon="/resources/gif/user.png" action="#{menuBean.adminUser}" disabled="#{featuresBean.userRegistration}"/>
-	    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[13]}" icon="/resources/gif/admin.png" action="#{menuBean.bris}" disabled="#{featuresBean.brisFeatures}"/>
-	    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[15]}" icon="/resources/gif/explorer.png" action="#{menuBean.explorer}" disabled="#{featuresBean.explorer}"/>
-	    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[14]}" icon="/resources/gif/user-1.png" action="#{loginBean.logout}"/>
-			</p:dock>
-		</h:panelGroup>
-		
-		<h:panelGroup layout="block" rendered="#{menuBean.defaultMenu}">
-			<p:dialog style="background: transparent; !important;#{skin.dialog}" resizable="false" position="right top" visible="true" modal="false" showHeader="false" widgetVar="menuDlg" Height="50" width="205" closable="false">
-				<p:commandButton id="btn" value="Show Menu" type="button" style="float:top" icon="ui-icon-calculator"/>
-			</p:dialog>
-			
-			<p:menu overlay="true" trigger="btn" my="left top" at="top left" toggleable="true">
-				<p:submenu label="Informations" style="#{skin.menu}">
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[0]}" icon="/resources/gif/home.png" action="#{menuBean.home}" disabled="#{featuresBean.profile}"/>
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[1]}" icon="/resources/gif/customer.png" action="#{menuBean.adminTaxpayer}" disabled="#{featuresBean.registration}"/>
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[2]}" icon="/resources/gif/clearance.png" action="#{menuBean.clearance}" disabled="#{featuresBean.clearance}"/>
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[3]}" icon="/resources/gif/idcard.png" action="#{menuBean.cards}" disabled="#{featuresBean.idGeneration}"/>
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[15]}" icon="/resources/gif/explorer.png" action="#{menuBean.explorer}" disabled="#{featuresBean.explorer}"/>
-				</p:submenu>
-				<p:submenu label="Recordings" style="#{skin.menu}">
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[4]}" icon="/resources/gif/cheque.png" action="#{menuBean.cheque}" disabled="#{featuresBean.cheque}"/>
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[5]}" icon="/resources/gif/blotter.png" action="#{menuBean.blotters}" disabled="#{featuresBean.blotters}"/>
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[6]}" icon="/resources/gif/documents-1.png" action="#{menuBean.adminBusiness}" disabled="#{featuresBean.business}"/>
-				</p:submenu>
-				<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[7]}" icon="/resources/gif/bris.png" action="#{menuBean.assistant}" disabled="#{featuresBean.assistant}"/>
-				<p:submenu label="Graphs" style="#{skin.menu}">
-		    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[8]}" icon="/resources/gif/graph.png" action="#{menuBean.graph}" disabled="#{featuresBean.graph}"/>
-		    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[9]}" icon="/resources/gif/organization.png" action="#{menuBean.organization}" disabled="#{featuresBean.organization}"/>
-		    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[10]}" icon="/resources/gif/meter2.png" action="#{menuBean.moemeter}" disabled="#{featuresBean.moemeter}"/>
-	    		</p:submenu>
-	    		<p:submenu label="Administrative" style="#{skin.menu}">
-		    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[11]}" icon="/resources/gif/employee.png" action="#{menuBean.adminEmployees}" disabled="#{featuresBean.employee}"/>
-		    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[12]}" icon="/resources/gif/user.png" action="#{menuBean.adminUser}" disabled="#{featuresBean.userRegistration}"/>
-		    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[13]}" icon="/resources/gif/admin.png" action="#{menuBean.bris}" disabled="#{featuresBean.brisFeatures}"/>
-	    		</p:submenu>
-	    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[14]}" icon="/resources/gif/user-1.png" action="#{loginBean.logout}"/>
-			</p:menu>
-		</h:panelGroup>
-		
-		<h:panelGroup layout="block" rendered="#{menuBean.slide}">
-			<p:dialog style="background: transparent; !important;#{skin.dialog}" resizable="false" position="right top" visible="true" modal="false" showHeader="false" widgetVar="menuSlideDlg" Height="50" width="205" closable="false">
-				<p:commandButton id="btnSlide" value="Show Menu" type="button" style="float:top" icon="ui-icon-calculator"/>
-			</p:dialog>
-			
-			<p:slideMenu overlay="true" trigger="btnSlide" my="left top" at="top left" toggleable="true">
-				<p:submenu label="Informations" style="#{skin.menu}">
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[0]}" icon="/resources/gif/home.png" action="#{menuBean.home}" disabled="#{featuresBean.profile}"/>
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[1]}" icon="/resources/gif/customer.png" action="#{menuBean.adminTaxpayer}" disabled="#{featuresBean.registration}"/>
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[2]}" icon="/resources/gif/clearance.png" action="#{menuBean.clearance}" disabled="#{featuresBean.clearance}"/>
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[3]}" icon="/resources/gif/idcard.png" action="#{menuBean.cards}" disabled="#{featuresBean.idGeneration}"/>
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[15]}" icon="/resources/gif/explorer.png" action="#{menuBean.explorer}" disabled="#{featuresBean.explorer}"/>
-				</p:submenu>
-				<p:submenu label="Recordings" style="#{skin.menu}">
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[4]}" icon="/resources/gif/cheque.png" action="#{menuBean.cheque}" disabled="#{featuresBean.cheque}"/>
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[5]}" icon="/resources/gif/blotter.png" action="#{menuBean.blotters}" disabled="#{featuresBean.blotters}"/>
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[6]}" icon="/resources/gif/documents-1.png" action="#{menuBean.adminBusiness}" disabled="#{featuresBean.business}"/>
-				</p:submenu>
-				<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[7]}" icon="/resources/gif/bris.png" action="#{menuBean.assistant}" disabled="#{featuresBean.assistant}"/>
-				<p:submenu label="Graphs" style="#{skin.menu}">
-		    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[8]}" icon="/resources/gif/graph.png" action="#{menuBean.graph}" disabled="#{featuresBean.graph}"/>
-		    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[9]}" icon="/resources/gif/organization.png" action="#{menuBean.organization}" disabled="#{featuresBean.organization}"/>
-		    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[10]}" icon="/resources/gif/meter2.png" action="#{menuBean.moemeter}" disabled="#{featuresBean.moemeter}"/>
-	    		</p:submenu>
-	    		<p:submenu label="Administrative" style="#{skin.menu}">
-		    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[11]}" icon="/resources/gif/employee.png" action="#{menuBean.adminEmployees}" disabled="#{featuresBean.employee}"/>
-		    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[12]}" icon="/resources/gif/user.png" action="#{menuBean.adminUser}" disabled="#{featuresBean.userRegistration}"/>
-		    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[13]}" icon="/resources/gif/admin.png" action="#{menuBean.bris}" disabled="#{featuresBean.brisFeatures}"/>
-	    		</p:submenu>
-	    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[14]}" icon="/resources/gif/user-1.png" action="#{loginBean.logout}"/>
-			</p:slideMenu>
-		</h:panelGroup>
-		
-		<h:panelGroup layout="block" rendered="#{menuBean.tab}">
-			<p:dialog style="background: transparent; !important;#{skin.dialog}" resizable="false" position="left bottom" visible="true" modal="false" showHeader="false" widgetVar="menuTabDlg" Height="50" width="1200" closable="false">
-			
-			<p:tabMenu activeIndex="#{menuBean.index}">
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[0]}" icon="/resources/gif/home.png" action="#{menuBean.home}" disabled="#{featuresBean.profile}"/>
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[1]}" icon="/resources/gif/customer.png" action="#{menuBean.adminTaxpayer}" disabled="#{featuresBean.registration}"/>
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[2]}" icon="/resources/gif/clearance.png" action="#{menuBean.clearance}" disabled="#{featuresBean.clearance}"/>
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[3]}" icon="/resources/gif/idcard.png" action="#{menuBean.cards}" disabled="#{featuresBean.idGeneration}"/>
-				
-				
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[4]}" icon="/resources/gif/cheque.png" action="#{menuBean.cheque}" disabled="#{featuresBean.cheque}"/>
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[5]}" icon="/resources/gif/blotter.png" action="#{menuBean.blotters}" disabled="#{featuresBean.blotters}"/>
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[6]}" icon="/resources/gif/documents-1.png" action="#{menuBean.adminBusiness}" disabled="#{featuresBean.business}"/>
-				
-					<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[7]}" icon="/resources/gif/bris.png" action="#{menuBean.assistant}" disabled="#{featuresBean.assistant}"/>
-				
-		    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[8]}" icon="/resources/gif/graph.png" action="#{menuBean.graph}" disabled="#{featuresBean.graph}"/>
-		    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[9]}" icon="/resources/gif/organization.png" action="#{menuBean.organization}" disabled="#{featuresBean.organization}"/>
-		    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[10]}" icon="/resources/gif/meter2.png" action="#{menuBean.moemeter}" disabled="#{featuresBean.moemeter}"/>
-	    		
-	    		
-		    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[11]}" icon="/resources/gif/employee.png" action="#{menuBean.adminEmployees}" disabled="#{featuresBean.employee}"/>
-		    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[12]}" icon="/resources/gif/user.png" action="#{menuBean.adminUser}" disabled="#{featuresBean.userRegistration}"/>
-		    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[13]}" icon="/resources/gif/admin.png" action="#{menuBean.bris}" disabled="#{featuresBean.brisFeatures}"/>
-		    		
-		    		<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[15]}" icon="/resources/gif/explorer.png" action="#{menuBean.explorer}" disabled="#{featuresBean.explorer}"/>
-	    		
-	    			<p:menuitem style="#{skin.menu}" value="#{menuBean.labels[14]}" icon="/resources/gif/user-1.png" action="#{loginBean.logout}"/>
-			</p:tabMenu>
-			</p:dialog>
-		</h:panelGroup>
-		
-		
-		<h:panelGroup layout="block" rendered="#{menuBean.boot}">
-		
-		
-		
-      			<div 
+    
+    	<p:tooltip position="top"/>
+    	<div 
 	   					style="width: 100%;
 						  padding-right: 15px;
 						  padding-left: 15px;
@@ -189,148 +22,72 @@
 						  right: 0;
 						  bottom: 0;
 						  left: 0;
-						  z-index: 1030;
-						  background: linear-gradient(#6abdf4, #41a7eb, #1a93e3);
-						  ">
+						  z-index: 1;
+						  background: linear-gradient(#0789b2, #086583, #044357);">
+						<h:outputStylesheet>
+							.menuButton{
+								width: 100%;
+								-webkit-transition-duration: 0.4s; /* Safari */
+								  transition-duration: 0.4s;
+								  cursor: pointer;
+							}
+							.ui-button.menuButton:hover {
+								  background-color: #e7e7e7; /* gray */
+								  color: black;
+								  transform:scale(1.3,1.3);
+							    -webkit-transform:scale(1.3,1.3);
+							    -moz-transform:scale(1.3,1.3);
+							    padding: 20px 10px; /* 5px top/bottom, 10px left/right */
+								} 
+						</h:outputStylesheet>	 
+			             <p:commandButton value="Menu" styleClass="menuButton" onclick="PF('dlgMain').show();"/>
+			               
+			</div>
+    		<p:dialog widgetVar="dlgMain" closable="false" draggable="false" modal="true" showEffect="fade" hideEffect="fade" showHeader="false" position="center center">
+		
+			<p:panelGrid columns="3" styleClass="ui-noborder">
 							
-			              <p:commandLink  style="#{skin.menu}" action="#{menuBean.home}" rendered="#{!featuresBean.profile}" title="#{menuBean.labels[0]}">
-			                <span class="fa-stack fa-lg">
-			                  <i class="fa fa-circle fa-stack-2x"></i>
-			                  <i class="fa fa-list-alt fa-stack-1x fa-inverse"></i>
-			                </span>
-			              </p:commandLink>
-			           
-			              <p:commandLink style="#{skin.menu}" action="#{menuBean.adminTaxpayer}" rendered="#{!featuresBean.registration}" title="#{menuBean.labels[1]}">
-			                <span class="fa-stack fa-lg">
-			                  <i class="fa fa-circle fa-stack-2x"></i>
-			                  <i class="fa fa-male fa-stack-1x fa-inverse"></i>
-			                </span>
-			              </p:commandLink>
-			            
-			              <p:commandLink style="#{skin.menu}" action="#{menuBean.clearance}" rendered="#{!featuresBean.clearance}" title="#{menuBean.labels[2]}">
-			                <span class="fa-stack fa-lg">
-			                  <i class="fa fa-circle fa-stack-2x"></i>
-			                  <i class="fa fa-file-word-o fa-stack-1x fa-inverse"></i>
-			                </span>
-			              </p:commandLink>
-			            
-			              <p:commandLink style="#{skin.menu}" action="#{menuBean.cards}" rendered="#{!featuresBean.idGeneration}" title="#{menuBean.labels[3]}">
-			                <span class="fa-stack fa-lg">
-			                  <i class="fa fa-circle fa-stack-2x"></i>
-			                  <i class="fa fa-credit-card fa-stack-1x fa-inverse"></i>
-			                </span>
-			              </p:commandLink>
-			            
-			              <p:commandLink style="#{skin.menu}" action="#{menuBean.cheque}" rendered="#{!featuresBean.cheque}" title="#{menuBean.labels[4]}">
-			                <span class="fa-stack fa-lg">
-			                  <i class="fa fa-circle fa-stack-2x"></i>
-			                  <i class="fa fa-file-o fa-stack-1x fa-inverse"></i>
-			                </span>
-			              </p:commandLink>
-			            
-			              <p:commandLink style="#{skin.menu}" action="#{menuBean.blotters}" rendered="#{!featuresBean.blotters}" title="#{menuBean.labels[5]}">
-			                <span class="fa-stack fa-lg">
-			                  <i class="fa fa-circle fa-stack-2x"></i>
-			                  <i class="fa  fa-calendar-plus-o fa-stack-1x fa-inverse"></i>
-			                </span>
-			              </p:commandLink>
-			           
-			              <p:commandLink style="#{skin.menu}" action="#{menuBean.adminBusiness}" rendered="#{!featuresBean.business}" title="#{menuBean.labels[6]}">
-			                <span class="fa-stack fa-lg">
-			                  <i class="fa fa-circle fa-stack-2x"></i>
-			                  <i class="fa fa-black-tie fa-stack-1x fa-inverse"></i>
-			                </span>
-			              </p:commandLink>
-			            
-			              <p:commandLink style="#{skin.menu}" action="#{menuBean.assistant}" rendered="#{!featuresBean.assistant}" title="#{menuBean.labels[7]}">
-			                <span class="fa-stack fa-lg">
-			                  <i class="fa fa-circle fa-stack-2x"></i>
-			                  <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i>
-			                </span>
-			              </p:commandLink>
-			            
-			              <p:commandLink style="#{skin.menu}" action="#{menuBean.graph}" rendered="#{!featuresBean.graph}" title="#{menuBean.labels[8]}">
-			                <span class="fa-stack fa-lg">
-			                  <i class="fa fa-circle fa-stack-2x"></i>
-			                  <i class="fa fa-line-chart fa-stack-1x fa-inverse"></i>
-			                </span>
-			              </p:commandLink>
-			            
-			              <p:commandLink style="#{skin.menu}" action="#{menuBean.organization}" rendered="#{!featuresBean.organization}" title="#{menuBean.labels[9]}">
-			                <span class="fa-stack fa-lg">
-			                  <i class="fa fa-circle fa-stack-2x"></i>
-			                  <i class="fa fa-sitemap fa-stack-1x fa-inverse"></i>
-			                </span>
-			              </p:commandLink>
-			            
-			              <p:commandLink style="#{skin.menu}" action="#{menuBean.moemeter}" rendered="#{!featuresBean.moemeter}" title="#{menuBean.labels[10]}">
-			                <span class="fa-stack fa-lg">
-			                  <i class="fa fa-circle fa-stack-2x"></i>
-			                  <i class="fa fa-money fa-stack-1x fa-inverse"></i>
-			                </span>
-			              </p:commandLink>
-			            
-			              <p:commandLink style="#{skin.menu}" action="#{menuBean.adminEmployees}" rendered="#{!featuresBean.employee}" title="#{menuBean.labels[11]}">
-			                <span class="fa-stack fa-lg">
-			                  <i class="fa fa-circle fa-stack-2x"></i>
-			                  <i class="fa fa-users fa-stack-1x fa-inverse"></i>
-			                </span>
-			              </p:commandLink>
-			            
-			              <p:commandLink style="#{skin.menu}" action="#{menuBean.adminUser}" rendered="#{!featuresBean.userRegistration}" title="#{menuBean.labels[12]}">
-			                <span class="fa-stack fa-lg">
-			                  <i class="fa fa-circle fa-stack-2x"></i>
-			                  <i class="fa fa-user-plus fa-stack-1x fa-inverse"></i>
-			                </span>
-			              </p:commandLink>
-			            
-			              <p:commandLink style="#{skin.menu}" action="#{menuBean.bris}" rendered="#{!featuresBean.brisFeatures}" title="#{menuBean.labels[13]}">
-			                <span class="fa-stack fa-lg">
-			                  <i class="fa fa-circle fa-stack-2x"></i>
-			                  <i class="fa fa-cogs fa-stack-1x fa-inverse"></i>
-			                </span>
-			              </p:commandLink>
-			            
-			              <p:commandLink style="#{skin.menu}" action="#{menuBean.explorer}" rendered="#{!featuresBean.explorer}" title="#{menuBean.labels[15]}">
-			                <span class="fa-stack fa-lg">
-			                  <i class="fa fa-circle fa-stack-2x"></i>
-			                  <i class="fa fa-th-list fa-stack-1x fa-inverse"></i>
-			                </span>
-			              </p:commandLink>
-			            
-			              <p:commandLink style="#{skin.menu}" action="#{menuBean.cedula}" rendered="#{!featuresBean.cedula}" title="#{menuBean.labels[16]}">
-			                <span class="fa-stack fa-lg">
-			                  <i class="fa fa-circle fa-stack-2x"></i>
-			                  <i class="fa fa-file fa-stack-1x fa-inverse"></i>
-			                </span>
-			              </p:commandLink>
-			            
-			              <p:commandLink style="#{skin.menu}" action="#{menuBean.orlisting}" rendered="#{!featuresBean.orlisting}" title="#{menuBean.labels[17]}">
-			                <span class="fa-stack fa-lg">
-			                  <i class="fa fa-circle fa-stack-2x"></i>
-			                  <i class="fa fa-file-text fa-stack-1x fa-inverse"></i>
-			                </span>
-			              </p:commandLink>
-			            
-			              <p:commandLink style="#{skin.menu}" action="#{menuBean.reporting}" rendered="#{!featuresBean.reporting}" title="#{menuBean.labels[18]}">
-			                <span class="fa-stack fa-lg">
-			                  <i class="fa fa-circle fa-stack-2x"></i>
-			                  <i class="fa fa-list-ol fa-stack-1x fa-inverse"></i>
-			                </span>
-			              </p:commandLink>
-			              
-			              <p:commandLink style="#{skin.menu}" action="#{loginBean.logout}" title="#{menuBean.labels[14]}">
-			                <span class="fa-stack fa-lg">
-			                  <i class="fa fa-circle fa-stack-2x"></i>
-			                  <i class="fa  fa-power-off fa-stack-1x fa-inverse"></i>
-			                </span>
-			              </p:commandLink>
-			            	
-			</div>	
-			
-		</h:panelGroup>
+							<h:outputStylesheet>
+								.button {
+								  background-color: #008CBA; /* blue */
+								  border: none;
+								  color: white;
+								  padding: 5px 32px;
+								  text-align: center;
+								  text-decoration: none;
+								  display: inline-block;
+								  font-size: 16px;
+								  margin: 4px 2px;
+								  cursor: pointer;
+								  width: 100%;
+								  -webkit-transition-duration: 0.4s; /* Safari */
+								  transition-duration: 0.4s;
+								  cursor: pointer;
+								}
+								.ui-button.button:hover {
+								  background-color: #e7e7e7; /* gray */
+								  color: black;
+								}  
+							</h:outputStylesheet>
+							
+							<p:commandButton value="#{menuBean.labels[0]}" icon="pi pi-file" action="#{menuBean.home}" disabled="#{featuresBean.profile}" styleClass="button" immediate="false" ajax="false"/>
+							<p:commandButton value="#{menuBean.labels[1]}" icon="pi pi-file" action="#{menuBean.adminTaxpayer}" disabled="#{featuresBean.registration}" styleClass="button" immediate="false" ajax="false"/>
+							<p:commandButton value="#{menuBean.labels[2]}" icon="pi pi-file" action="#{menuBean.clearance}" disabled="#{featuresBean.clearance}" styleClass="button" immediate="false" ajax="false"/>
+							<p:commandButton value="#{menuBean.labels[3]}" icon="pi pi-file" action="#{menuBean.cards}" disabled="#{featuresBean.idGeneration}" styleClass="button" immediate="false" ajax="false"/>
+							<p:commandButton value="#{menuBean.labels[4]}" icon="pi pi-file" action="#{menuBean.cheque}" disabled="#{featuresBean.cheque}" styleClass="button" immediate="false" ajax="false"/>
+							<p:commandButton value="#{menuBean.labels[5]}" icon="pi pi-file" action="#{menuBean.blotters}" disabled="#{featuresBean.blotters}" styleClass="button" immediate="false" ajax="false"/>
+							<p:commandButton value="#{menuBean.labels[6]}" icon="pi pi-file" action="#{menuBean.adminBusiness}" disabled="#{featuresBean.business}" styleClass="button" immediate="false" ajax="false"/>
+				    		<p:commandButton value="#{menuBean.labels[10]}" icon="pi pi-file" action="#{menuBean.moemeter}" disabled="#{featuresBean.moemeter}" styleClass="button" immediate="false" ajax="false"/>
+				    		<p:commandButton value="#{menuBean.labels[11]}" icon="pi pi-file" action="#{menuBean.adminEmployees}" disabled="#{featuresBean.employee}" styleClass="button" immediate="false" ajax="false"/>
+				    		<p:commandButton value="#{menuBean.labels[12]}" icon="pi pi-file" action="#{menuBean.adminUser}" disabled="#{featuresBean.userRegistration}" styleClass="button" immediate="false" ajax="false"/>
+				    		<p:commandButton value="#{menuBean.labels[13]}" icon="pi pi-file" action="#{menuBean.bris}" disabled="#{featuresBean.brisFeatures}" styleClass="button" immediate="false" ajax="false"/>
+				    		<p:commandButton icon="pi pi-file-o" onclick="PF('dlgMain').hide();" value="Hide This Window" styleClass="button"/>
+				    		<p:commandButton value="#{menuBean.labels[14]}" icon="pi pi-times" action="#{loginBean.logout}" styleClass="button" immediate="false" ajax="false"/>
+							
+			</p:panelGrid>
 		
-		
+		</p:dialog>
+    
 		
 		<ui:include src="ebutton.xhtml" />
 		
