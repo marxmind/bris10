@@ -114,7 +114,8 @@ public static Map<Integer, Object> printDocumentV7(Clearance clr) {
 				com.italia.marxmind.bris.enm.Purpose.BUSINESS_RENEWAL.getId()== clr.getPurposeType() ||
 					com.italia.marxmind.bris.enm.Purpose.BUSINESS_CERTIFICATION.getId()== clr.getPurposeType() ||
 							com.italia.marxmind.bris.enm.Purpose.RETIREMENT_BUSINESS.getId()== clr.getPurposeType() ||
-						com.italia.marxmind.bris.enm.Purpose.BUSINESS_FOR_LOAN_REQUIREMENTS.getId()== clr.getPurposeType()){ //business
+						com.italia.marxmind.bris.enm.Purpose.BUSINESS_FOR_LOAN_REQUIREMENTS.getId()== clr.getPurposeType() ||
+						com.italia.marxmind.bris.enm.Purpose.BUSINESS_LOAN_BANK_REQUIREMENTS.getId()== clr.getPurposeType()){ //business
 			
 			
 			if(clr.getMultilivelihood()!=null && clr.getMultilivelihood().size()>0){
@@ -175,6 +176,18 @@ public static Map<Integer, Object> printDocumentV7(Clearance clr) {
 				param.put("PARAM_REQUESTOR_POSITION", "Owner");
 			}else if(com.italia.marxmind.bris.enm.Purpose.BUSINESS_FOR_LOAN_REQUIREMENTS.getId()== clr.getPurposeType()){
 				purpose="Requirement for Loan Application";
+				REPORT_NAME = BUSINESS_REPORT_CERTIFICATE;
+				str=new StringBuilder();
+				
+				str.append(requestor);
+				detail_1 = str.toString();
+				str=new StringBuilder();
+				str.append(Words.getTagName("business-3").replace("<barangayname>", "Brgy. " + BARANGAY));
+				
+				param.put("PARAM_ISSUED", Words.getTagName("business-7"));
+				param.put("PARAM_REQUESTOR_POSITION", "Owner");
+			}else if(com.italia.marxmind.bris.enm.Purpose.BUSINESS_LOAN_BANK_REQUIREMENTS.getId()== clr.getPurposeType()){
+				purpose="BANK REQUIREMENTS";
 				REPORT_NAME = BUSINESS_REPORT_CERTIFICATE;
 				str=new StringBuilder();
 				
@@ -1043,7 +1056,11 @@ public static Map<Integer, Object> printDocumentV7(Clearance clr) {
 						com.italia.marxmind.bris.enm.Purpose.CONFIRMATION_APPLICATION.getId()== clr.getPurposeType() ||
 								com.italia.marxmind.bris.enm.Purpose.ESC_SCHOLARSHIP_REQUIREMENTS.getId()== clr.getPurposeType() ||
 										com.italia.marxmind.bris.enm.Purpose.SCHOLARSHIP_REQUIREMENTS.getId()== clr.getPurposeType() || 
-										com.italia.marxmind.bris.enm.Purpose.SCHOOL_REQUIREMENTS.getId()== clr.getPurposeType()
+										com.italia.marxmind.bris.enm.Purpose.SCHOOL_REQUIREMENTS.getId()== clr.getPurposeType() ||
+												com.italia.marxmind.bris.enm.Purpose.PHILHEALTH_TRANSACTION_INDIGENT.getId()== clr.getPurposeType() ||
+														com.italia.marxmind.bris.enm.Purpose.FOOD_INDIGENT_ASSISTANCE.getId()== clr.getPurposeType() ||
+																com.italia.marxmind.bris.enm.Purpose.TO_SEEK_PERSONAL_MEDICAL_ASSISTANCE.getId()== clr.getPurposeType() ||
+																		com.italia.marxmind.bris.enm.Purpose.TO_SEEK_MEDICAL_ASSISTANCE_OPD.getId()== clr.getPurposeType()
 				
 				){	
 			
@@ -1089,6 +1106,13 @@ public static Map<Integer, Object> printDocumentV7(Clearance clr) {
 				purpose = Words.getTagName("asstance-cert-string-14") + "\n";
 			}else if(com.italia.marxmind.bris.enm.Purpose.SCHOOL_REQUIREMENTS.getId()== clr.getPurposeType()){
 				purpose = Words.getTagName("asstance-cert-string-15") + "\n";
+			}else if(com.italia.marxmind.bris.enm.Purpose.PHILHEALTH_TRANSACTION_INDIGENT.getId()== clr.getPurposeType()){
+				purpose = Words.getTagName("asstance-cert-string-19") + "\n";
+			}else if(com.italia.marxmind.bris.enm.Purpose.FOOD_INDIGENT_ASSISTANCE.getId()== clr.getPurposeType()){
+				purpose = Words.getTagName("asstance-cert-string-21") + "\n";
+			}else if(com.italia.marxmind.bris.enm.Purpose.TO_SEEK_PERSONAL_MEDICAL_ASSISTANCE.getId()== clr.getPurposeType() ||
+					com.italia.marxmind.bris.enm.Purpose.TO_SEEK_MEDICAL_ASSISTANCE_OPD.getId()== clr.getPurposeType()){
+				purpose = Words.getTagName("asstance-cert-string-22") + "\n";
 			}
 			
 			ClearanceRpt rpt = new ClearanceRpt();
@@ -1113,6 +1137,9 @@ public static Map<Integer, Object> printDocumentV7(Clearance clr) {
 			}else if(DocTypes.CERTIFICATE_OPEN_TITLE.getId()==clr.getDocumentType() || DocTypes.CLEARANCE_OPEN_TITLE.getId()==clr.getDocumentType()){
 				word.append(Words.getTagName("asstance-cert-string-18").replace("<heshe>", heshe));
 				str.append(word);
+			}else if(DocTypes.INDIGENT_CERTIFICATION.getId()==clr.getDocumentType()){
+				word.append(Words.getTagName("asstance-cert-string-20").replace("<heshe>", heshe));
+				str.append(word);	
 			}else {
 				word.append(Words.getTagName("asstance-cert-string-17").replace("<heshe>", heshe));
 				str.append(word);
@@ -1127,7 +1154,8 @@ public static Map<Integer, Object> printDocumentV7(Clearance clr) {
 			str.append(word);
 			
 			detail_2 = str.toString();	
-			
+		
+		
 			
 		}else if(com.italia.marxmind.bris.enm.Purpose.LARGE_CATTLE.getId()== clr.getPurposeType()){
 			
@@ -2070,7 +2098,10 @@ public static Map<Integer, Object> printDocumentV7(Clearance clr) {
 					REPORT_NAME = DOC_OPEN_TITLE_REPORT_NAME;
 					param.put("PARAM_DOC_OPEN_TITLE", "BARANGAY CERTIFICATE OF LOW INCOME");
 					
-				}	
+				}else if(DocTypes.INDIGENT_CERTIFICATION.getId()==clr.getDocumentType()) {
+					REPORT_NAME = DOC_OPEN_TITLE_REPORT_NAME;
+					param.put("PARAM_DOC_OPEN_TITLE", "BARANGAY CERTIFICATE OF INDIGENCY");
+				}		
 				
 				ReportCompiler compiler = new ReportCompiler();
 				String jrxmlFile = compiler.compileReport(REPORT_NAME, REPORT_NAME, path);

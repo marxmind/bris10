@@ -1023,7 +1023,8 @@ public class DocumentsBean implements Serializable{
 				//com.italia.marxmind.bris.enm.Purpose.BUSINESS_PERMIT.getId()== getPurposeTypeId() ||
 				com.italia.marxmind.bris.enm.Purpose.RETIREMENT_BUSINESS.getId()== getPurposeTypeId() ||
 				com.italia.marxmind.bris.enm.Purpose.BUSINESS_RENEWAL.getId()== getPurposeTypeId() ||
-				com.italia.marxmind.bris.enm.Purpose.BUSINESS_FOR_LOAN_REQUIREMENTS.getId()== getPurposeTypeId()){	
+				com.italia.marxmind.bris.enm.Purpose.BUSINESS_FOR_LOAN_REQUIREMENTS.getId()== getPurposeTypeId() ||
+				com.italia.marxmind.bris.enm.Purpose.BUSINESS_LOAN_BANK_REQUIREMENTS.getId()== getPurposeTypeId()){	
 			
 			setLargeCattleFld(true);
 			setRelationshipFld(true);
@@ -2132,6 +2133,7 @@ public class DocumentsBean implements Serializable{
 				com.italia.marxmind.bris.enm.Purpose.BUSINESS_CERTIFICATION.getId()==getPurposeTypeId() ||
 				com.italia.marxmind.bris.enm.Purpose.FISH_CAGE_RENEWAL.getId()==getPurposeTypeId() ||
 				com.italia.marxmind.bris.enm.Purpose.BUSINESS_FOR_LOAN_REQUIREMENTS.getId()==getPurposeTypeId() ||
+						com.italia.marxmind.bris.enm.Purpose.BUSINESS_LOAN_BANK_REQUIREMENTS.getId()==getPurposeTypeId() ||
 				com.italia.marxmind.bris.enm.Purpose.FISCH_CAGE.getId()==getPurposeTypeId() || 
 				com.italia.marxmind.bris.enm.Purpose.LARGE_CATTLE.getId()==getPurposeTypeId()){
 			
@@ -2221,6 +2223,14 @@ public class DocumentsBean implements Serializable{
 		}else if(com.italia.marxmind.bris.enm.Purpose.SOLO_PARENT.getId()==getPurposeTypeId()){		
 			
 			docTypes.add(new SelectItem(DocTypes.CERTIFICATE_OPEN_TITLE.getId(), DocTypes.CERTIFICATE_OPEN_TITLE.getName()));
+		}else if(com.italia.marxmind.bris.enm.Purpose.PHILHEALTH_TRANSACTION_INDIGENT.getId()==getPurposeTypeId() ||
+				com.italia.marxmind.bris.enm.Purpose.FOOD_INDIGENT_ASSISTANCE.getId()==getPurposeTypeId()
+				|| com.italia.marxmind.bris.enm.Purpose.TO_SEEK_PERSONAL_MEDICAL_ASSISTANCE.getId()==getPurposeTypeId()
+				|| com.italia.marxmind.bris.enm.Purpose.TO_SEEK_MEDICAL_ASSISTANCE_OPD.getId()==getPurposeTypeId()){		
+			
+			docTypes.add(new SelectItem(DocTypes.INDIGENT_CERTIFICATION.getId(), DocTypes.INDIGENT_CERTIFICATION.getName()));
+			docTypes.add(new SelectItem(DocTypes.CERTIFICATE_OPEN_TITLE.getId(), DocTypes.CERTIFICATE_OPEN_TITLE.getName()));
+			docTypes.add(new SelectItem(DocTypes.CLEARANCE_OPEN_TITLE.getId(), DocTypes.CLEARANCE_OPEN_TITLE.getName()));
 			
 		}else{
 			
@@ -2686,7 +2696,8 @@ public class DocumentsBean implements Serializable{
 					com.italia.marxmind.bris.enm.Purpose.BUSINESS_RENEWAL.getId()==getPurposeTypeId() || 
 							com.italia.marxmind.bris.enm.Purpose.RETIREMENT_BUSINESS.getId()==getPurposeTypeId() ||
 					com.italia.marxmind.bris.enm.Purpose.BUSINESS_CERTIFICATION.getId()==getPurposeTypeId() ||
-					com.italia.marxmind.bris.enm.Purpose.BUSINESS_FOR_LOAN_REQUIREMENTS.getId()==getPurposeTypeId()	){
+					com.italia.marxmind.bris.enm.Purpose.BUSINESS_FOR_LOAN_REQUIREMENTS.getId()==getPurposeTypeId() ||
+					com.italia.marxmind.bris.enm.Purpose.BUSINESS_LOAN_BANK_REQUIREMENTS.getId()==getPurposeTypeId()){
 				isOk = businessCondition(isOk);
 			}else if(com.italia.marxmind.bris.enm.Purpose.BUSINESS_PERMIT.getId()==getPurposeTypeId()){
 				isOk = businessPermitCondition(isOk);
@@ -3593,7 +3604,8 @@ public class DocumentsBean implements Serializable{
 				}
 			}
 			
-			if(com.italia.marxmind.bris.enm.Purpose.BUSINESS_FOR_LOAN_REQUIREMENTS.getId()!=getPurposeTypeId()){
+			if(com.italia.marxmind.bris.enm.Purpose.BUSINESS_FOR_LOAN_REQUIREMENTS.getId()!=getPurposeTypeId() || 
+					com.italia.marxmind.bris.enm.Purpose.BUSINESS_LOAN_BANK_REQUIREMENTS.getId()!=getPurposeTypeId()){
 			
 				if(getOrNumber()==null || getOrNumber().isEmpty()){
 					Application.addMessage(3, "Please provide OR Number.", "");
@@ -3768,7 +3780,11 @@ public class DocumentsBean implements Serializable{
 													getPurposeTypeId()==com.italia.marxmind.bris.enm.Purpose.CONFIRMATION_APPLICATION.getId() ||
 															getPurposeTypeId()==com.italia.marxmind.bris.enm.Purpose.ESC_SCHOLARSHIP_REQUIREMENTS.getId() ||
 																	getPurposeTypeId()==com.italia.marxmind.bris.enm.Purpose.SCHOLARSHIP_REQUIREMENTS.getId() ||
-																			getPurposeTypeId()==com.italia.marxmind.bris.enm.Purpose.SCHOOL_REQUIREMENTS.getId()
+																			getPurposeTypeId()==com.italia.marxmind.bris.enm.Purpose.SCHOOL_REQUIREMENTS.getId() || 
+																					getPurposeTypeId()==com.italia.marxmind.bris.enm.Purpose.PHILHEALTH_TRANSACTION_INDIGENT.getId() ||
+																							getPurposeTypeId()==com.italia.marxmind.bris.enm.Purpose.FOOD_INDIGENT_ASSISTANCE.getId() ||
+																									getPurposeTypeId()==com.italia.marxmind.bris.enm.Purpose.TO_SEEK_PERSONAL_MEDICAL_ASSISTANCE.getId() ||
+																											getPurposeTypeId()==com.italia.marxmind.bris.enm.Purpose.TO_SEEK_MEDICAL_ASSISTANCE_OPD.getId()
 							
 							){
 						
